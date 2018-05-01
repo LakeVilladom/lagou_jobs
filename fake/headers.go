@@ -21,6 +21,6 @@ var uas = [...]string{
 }
 
 func GetUserAgent() string {
-	n := rand.Intn(len(uas))
+	n := rand.New(rand.NewSource(time.Now().Unix())).Intn(len(uas))
 	return uas[n]
 }
